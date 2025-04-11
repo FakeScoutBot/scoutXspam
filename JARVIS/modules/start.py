@@ -4,10 +4,10 @@ from config import X1, X2, X3, X4, X5, X6, X7, X8, X9, X10
 START_BUTTON = [
     [Button.inline("• ᴄᴏᴍᴍᴀɴᴅs •", data="help_back")],
     [
-        Button.url("• ᴄʜᴀɴɴᴇʟ •", "https://t.me/JARVIS_V_SUPPORT/5"),
-        Button.url("• sᴜᴘᴘᴏʀᴛ •", "https://t.me/Dora_Hub")
+        Button.url("• ᴄʜᴀɴɴᴇʟ •", "https://t.me/+LbrMou4T_DFkMmRl"),
+        Button.url("• sᴜᴘᴘᴏʀᴛ •", "https://t.me/+LbrMou4T_DFkMmRl")
     ],
-    [Button.url("• ʀᴇᴘᴏ •", "https://github.com/doraemon890/JARVIS-X-SPAM")]
+    [Button.url("• ʀᴇᴘᴏ •", "https://t.me/+LbrMou4T_DFkMmRl")]
 ]
 
 # Define a list of handlers
@@ -25,8 +25,8 @@ for handler in handlers:
             TEXT = (
                 f"**ʜᴇʏ [{event.sender.first_name}](tg://user?id={event.sender.id}),\n\n"
                 f"ɪ ᴀᴍ [{bot_name}](tg://user?id={bot_id})**\n━━━━━━━━━━━━━━━━━━━\n\n"
-                f"» **ᴍʏ ᴅᴇᴠᴇʟᴏᴘᴇʀ : [JARVIS](https://t.me/JARVIS_V2)**\n\n"
-                f"» **ᴊᴀʀᴠɪs V2 :** `M 1.8.31`\n"
+                f"» **ᴍʏ ᴅᴇᴠᴇʟᴏᴘᴇʀ : [《●꯭𝐅꯭ᴇ꯭᧘꯭ʀ꯭ʟᴇ꯭ຮ꯭ຮ꯭ 𝐊꯭ι𝗇꯭ɢ꯭❤️‍🔥꯭々꯭»꯭™꯭⁷⁷⁷꯭●》](https://t.me/II_FEARLESS_KING_II)**\n\n"
+                f"» **Fearless V2 :** `M 1.8.31`\n"
                 f"» **ᴘʏᴛʜᴏɴ ᴠᴇʀsɪᴏɴ :** `3.11.3`\n"
                 f"» **ᴛᴇʟᴇᴛʜᴏɴ ᴠᴇʀsɪᴏɴ :** `{__version__}`\n━━━━━━━━━━━━━━━━━"
             )
