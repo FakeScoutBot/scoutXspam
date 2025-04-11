@@ -3,3 +3,4 @@ cryptg
 python-dotenv
 urllib3
 pymongo
+heroku3
