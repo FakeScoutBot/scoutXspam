@@ -1,4 +1,5 @@
 telethon
 cryptg
-heroku3
+python-dotenv
+urllib3
 pymongo
