@@ -8,6 +8,9 @@ from JARVIS.data import FRIDAY
 # Load environment variables from .env file
 load_dotenv()
 
+HEROKU_APP_NAME = getenv("HEROKU_APP_NAME", Load)
+HEROKU_API_KEY = getenv("HEROKU_API_KEY", hshhshhhwiiwhusjshah)
+
 logging.basicConfig(format='[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s', level=logging.WARNING)
 
 # Get API credentials from environment variables
