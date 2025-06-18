@@ -1,9 +1,9 @@
-from config import X1, X2, X3, X4, X5, X6, X7, X8, X9, X10, SUDO_USERS, CMD_HNDLR as hl
+from config import X1, X2, X3, X4, X5, X6, X7, X8, X9, X10, SUDO_USERS, CMD_HNDLR as hl, ACTIVE_HANDLERS
 from telethon import events
 from telethon.tl.functions.channels import LeaveChannelRequest
 
 # List of handlers
-handlers = [X1, X2, X3, X4, X5, X6, X7, X8, X9, X10]
+handlers = ACTIVE_HANDLERS
 
 # Leave function
 async def leave(event):
