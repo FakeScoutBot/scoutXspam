@@ -16,6 +16,8 @@ HELP_BUTTON = [
     [Button.url("• ᴄʜᴀɴɴᴇʟ •", "https://t.me/+v1ubYvri73owZDk9"), Button.url("• sᴜᴘᴘᴏʀᴛ •", "https://t.me/+LbrMou4T_DFkMmRl")]
 ]
 
+handlers = ACTIVE_HANDLERS
+
 extra_msg = (
     "**» ᴇxᴛʀᴀ ᴄᴏᴍᴍᴀɴᴅꜱ:**\n\n"
     "𝗨𝘀𝗲𝗿𝗕𝗼𝘁: **ᴜꜱᴇʀʙᴏᴛ ᴄᴍᴅꜱ**\n"
@@ -99,7 +101,7 @@ async def help_extra(event):
         await event.edit(extra_msg, buttons=[[Button.inline("< Back", data="help_back")]])
 
 # Register Event Handlers for Help Command
-for handler in [X1, X2, X3, X4, X5, X6, X7, X8, X9, X10]:
+for handler in handlers:
     handler.on(events.NewMessage(incoming=True, pattern=r"\%shelp(?: |$)(.*)" % hl))(show_help)
     handler.on(events.CallbackQuery(pattern=r"help_back"))(helpback)
     handler.on(events.CallbackQuery(pattern=r"spam"))(help_spam)
