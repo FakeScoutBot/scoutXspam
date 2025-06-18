@@ -45,6 +45,7 @@ if sudo_str:
 if OWNER_ID not in SUDO_USERS:
     SUDO_USERS.append(OWNER_ID)
 
+# Create clients for available bot tokens
 clients = []
 for idx, bot_token in enumerate(BOT_TOKENS, start=1):
     if bot_token:
@@ -52,4 +53,23 @@ for idx, bot_token in enumerate(BOT_TOKENS, start=1):
         clients.append(client)
         logging.info(f'Initialized bot X{idx}')
 
-X1, X2, X3, X4, X5, X6, X7, X8, X9, X10 = clients[:10]
+# Ensure we have at least one client
+if not clients:
+    raise ValueError("At least one BOT_TOKEN is required!")
+
+# Create variables X1-X10, filling with None for missing clients
+X1 = clients[0] if len(clients) > 0 else None
+X2 = clients[1] if len(clients) > 1 else None
+X3 = clients[2] if len(clients) > 2 else None
+X4 = clients[3] if len(clients) > 3 else None
+X5 = clients[4] if len(clients) > 4 else None
+X6 = clients[5] if len(clients) > 5 else None
+X7 = clients[6] if len(clients) > 6 else None
+X8 = clients[7] if len(clients) > 7 else None
+X9 = clients[8] if len(clients) > 8 else None
+X10 = clients[9] if len(clients) > 9 else None
+
+# Create a list of only active handlers for use in other modules
+ACTIVE_HANDLERS = [client for client in [X1, X2, X3, X4, X5, X6, X7, X8, X9, X10] if client is not None]
+
+print(f"✅ Successfully initialized {len(ACTIVE_HANDLERS)} bot client(s)")
