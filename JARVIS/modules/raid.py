@@ -3,13 +3,13 @@ import asyncio
 from random import choice
 from telethon import events
 
-from config import X1, X2, X3, X4, X5, X6, X7, X8, X9, X10, SUDO_USERS, OWNER_ID, CMD_HNDLR as hl
+from config import X1, X2, X3, X4, X5, X6, X7, X8, X9, X10, SUDO_USERS, OWNER_ID, CMD_HNDLR as hl, ACTIVE_HANDLERS
 from JARVIS.data import RAID, REPLYRAID, FRIDAY, MRAID, SRAID, QRAID
 
 REPLY_RAID = []
 
 # List of handlers
-handlers = [X1, X2, X3, X4, X5, X6, X7, X8, X9, X10]
+handlers = ACTIVE_HANDLERS
 
 # Helper function to get user ID from message
 async def get_user_id(e, text, index):
