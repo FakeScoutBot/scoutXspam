@@ -10,7 +10,7 @@ from telethon.errors import ForbiddenError
 from telethon.tl.custom import Button
 from config import (
     X1, X2, X3, X4, X5, X6, X7, X8, X9, X10,
-    MONGO_DB_URI, SUDO_USERS, OWNER_ID, HEROKU_API_KEY, HEROKU_APP_NAME, CMD_HNDLR as hl
+    MONGO_DB_URI, SUDO_USERS, OWNER_ID, HEROKU_API_KEY, HEROKU_APP_NAME, CMD_HNDLR as hl, ACTIVE_HANDLERS
 )
 
 # MongoDB configuration
@@ -23,7 +23,7 @@ db_names = [
 ]
 
 # Define the handlers
-handlers = [X1, X2, X3, X4, X5, X6, X7, X8, X9, X10]
+handlers = ACTIVE_HANDLERS
 
 # Map the handlers to their respective databases
 db_map = {handler: client[db_name] for handler, db_name in zip(handlers, db_names)}
