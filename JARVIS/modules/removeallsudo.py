@@ -5,11 +5,11 @@ import heroku3
 from telethon import events
 from config import (
     X1, X2, X3, X4, X5, X6, X7, X8, X9, X10,
-    SUDO_USERS, OWNER_ID, HEROKU_API_KEY, HEROKU_APP_NAME, CMD_HNDLR as hl
+    SUDO_USERS, OWNER_ID, HEROKU_API_KEY, HEROKU_APP_NAME, CMD_HNDLR as hl, ACTIVE_HANDLERS
 )
 
 # Define the handlers
-handlers = [X1, X2, X3, X4, X5, X6, X7, X8, X9, X10]
+handlers = ACTIVE_HANDLERS
 
 # Remove all sudo users function
 async def remove_all_sudo_users(event):
