@@ -11,14 +11,14 @@ from telethon.tl.functions.messages import ImportChatInviteRequest as Get
 from config import (
     X1, X2, X3, X4, X5, X6, X7, X8, X9, X10,
     OWNER_ID, SUDO_USERS, HEROKU_APP_NAME,
-    HEROKU_API_KEY, CMD_HNDLR as hl
+    HEROKU_API_KEY, CMD_HNDLR as hl, ACTIVE_HANDLERS
 )
 from JARVIS.data import FRIDAY
 
 ECHO = []
 
-# List of handlers
-handlers = [X1, X2, X3, X4, X5, X6, X7, X8, X9, X10]
+# List of handlers - only use active ones
+handlers = ACTIVE_HANDLERS
 
 # Function to handle ping command
 async def ping(event):
@@ -150,7 +150,7 @@ async def addmultisudo(event):
     elif event.sender_id in SUDO_USERS:
         await event.reply("ᴏɴʟʏ ғᴇᴀʀʟᴇss ᴋɪɴɢ ᴄᴀɴ ᴀᴅᴅ ᴍᴜʟᴛɪsᴜᴅᴏ ᴜsᴇʀs ᴀᴛ ᴀ ᴛɪᴍᴇ.")
 
-# Register event handlers
+# Register event handlers - only for active handlers
 for handler in handlers:
     handler.on(events.NewMessage(incoming=True, pattern=r"\%sping(?: |$)(.*)" % hl))(ping)
     handler.on(events.NewMessage(incoming=True, pattern=r"\%sreboot(?: |$)(.*)" % hl))(restart)
