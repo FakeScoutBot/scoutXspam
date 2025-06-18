@@ -6,7 +6,7 @@ import importlib.util
 import urllib3
 
 from pathlib import Path
-from config import X1, X2, X3, X4, X5, X6, X7, X8, X9, X10
+from config import X1, X2, X3, X4, X5, X6, X7, X8, X9, X10, ACTIVE_HANDLERS
 
 logging.basicConfig(format='[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s', level=logging.WARNING)
 
@@ -28,20 +28,17 @@ for name in files:
         plugin_name = patt.stem
         load_plugins(plugin_name)
 
-print("\n𝗡𝗼𝘄 𝗧𝗵𝗲 𝗛𝗮𝘀 𝗯𝗲𝗲𝗻 𝗗𝗲𝗽𝗹𝗼𝘆𝗲𝗱 𝗦𝘂𝗰𝗰𝗲𝘀𝘀𝗳𝘂𝗹𝗹𝘆✅ \n𝗠𝘆 𝗠𝗮𝘀𝘁𝗲𝗿 ➪ @JARVIS_V2"
-     )
+print(f"\n𝗡𝗼𝘄 𝗧𝗵𝗲 𝗛𝗮𝘀 𝗯𝗲𝗲𝗻 𝗗𝗲𝗽𝗹𝗼𝘆𝗲𝗱 𝗦𝘂𝗰𝗰𝗲𝘀𝘀𝗳𝘂𝗹𝗹𝘆✅ \n𝗠𝘆 𝗠𝗮𝘀𝘁𝗲𝗿 ➪ @JARVIS_V2\nActive bots: {len(ACTIVE_HANDLERS)}")
 
 async def main():
-    await X1.run_until_disconnected()
-    await X2.run_until_disconnected()
-    await X3.run_until_disconnected()
-    await X4.run_until_disconnected()
-    await X5.run_until_disconnected()
-    await X6.run_until_disconnected()
-    await X7.run_until_disconnected()
-    await X8.run_until_disconnected()
-    await X9.run_until_disconnected()
-    await X10.run_until_disconnected()
+    # Create tasks for all active handlers
+    tasks = []
+    for handler in ACTIVE_HANDLERS:
+        tasks.append(handler.run_until_disconnected())
+    
+    # Run all active handlers concurrently
+    await asyncio.gather(*tasks)
 
-loop = asyncio.get_event_loop()
-loop.run_until_complete(main())
+if __name__ == "__main__":
+    loop = asyncio.get_event_loop()
+    loop.run_until_complete(main())
