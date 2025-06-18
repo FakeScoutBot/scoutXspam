@@ -1,5 +1,5 @@
 from telethon import __version__, events, Button
-from config import X1, X2, X3, X4, X5, X6, X7, X8, X9, X10
+from config import X1, X2, X3, X4, X5, X6, X7, X8, X9, X10, ACTIVE_HANDLERS
 
 START_BUTTON = [
     [Button.inline("• ᴄᴏᴍᴍᴀɴᴅs •", data="help_back")],
@@ -10,8 +10,8 @@ START_BUTTON = [
     [Button.url("• ʀᴇᴘᴏ •", "https://t.me/Fake_Scout")]
 ]
 
-# Define a list of handlers
-handlers = [X1, X2, X3, X4, X5, X6, X7, X8, X9, X10]
+# Use only active handlers
+handlers = ACTIVE_HANDLERS
 
 # Register event handlers
 for handler in handlers:
